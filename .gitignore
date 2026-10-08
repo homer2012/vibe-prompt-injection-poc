@@ -1,0 +1,4 @@
+node_modules/
+victim-app/
+package-lock.json
+PWNED_BY_POSTINSTALL.txt

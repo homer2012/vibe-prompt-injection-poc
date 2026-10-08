@@ -1,0 +1,11 @@
+{
+  "name": "vibe-prompt-injection-poc",
+  "version": "1.0.0",
+  "description": "POC de sensibilisation DevSecOps : injection de prompt dans une dependance npm. TEST UNIQUEMENT - ne jamais publier sur le registre npm.",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
+  "keywords": ["poc", "security-awareness", "prompt-injection", "devsecops"],
+  "license": "MIT"
+}
