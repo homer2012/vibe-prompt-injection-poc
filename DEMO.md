@@ -2,7 +2,8 @@
 
 > **TEST UNIQUEMENT.** Charge utile 100 % bénigne (aucun accès réseau, aucune
 > lecture de secrets, aucune exfiltration). **Ne jamais publier sur le registre
-> npm** — dépôt privé sur GitHub, clairement étiqueté POC.
+> npm** — dépôt GitHub dédié (public recommandé pour la démo), clairement
+> étiqueté POC.
 
 Ce dépôt **est** le package : `package.json` est à la racine, condition
 nécessaire pour installer une dépendance git :
@@ -37,14 +38,12 @@ nécessaire pour installer une dépendance git :
 ## Publier sur GitHub (une seule fois)
 
 Le remote `origin` est déjà configuré
-(`https://github.com/homer2012/vibe-prompt-injection-poc.git`).
-Il reste à créer le dépôt **privé** et à s'authentifier :
-
-1. Créer le dépôt : https://github.com/new → nom `vibe-prompt-injection-poc`,
-   **privé**, sans README ni licence.
-2. Créer un Personal Access Token : https://github.com/settings/tokens
-   (token classique, scope `repo`).
-3. Pousser (le PAT sert de mot de passe au prompt git ; ne jamais le commiter) :
+(`https://github.com/homer2012/vibe-prompt-injection-poc.git`) et le dépôt
+est publié (**public** — recommandé : aucune authentification requise pour la
+démo). Pour repartir de zéro : créer le dépôt sur https://github.com/new
+(sans README ni licence), créer un PAT (https://github.com/settings/tokens,
+scope `repo`), puis pousser (le PAT sert de mot de passe au prompt git ; ne
+jamais le commiter) :
 
 ```bash
 git push -u origin main
@@ -61,8 +60,8 @@ npm install --foreground-scripts # → rejoue en voyant l'injection dans la sort
 ```
 
 Avec un dépôt **privé**, `npm install` demande aussi des identifiants côté
-victime (credential helper git) — ne jamais embarquer de token dans
-`package.json`.
+victime (PAT ou clé SSH) — ne jamais embarquer de token dans `package.json`.
+C'est pourquoi le dépôt public est recommandé pour les démos.
 
 ## Montrer la surface agent
 
